@@ -5,20 +5,44 @@ import java.util.EmptyStackException;
 /**
  */
 public class Stack extends AbstractStack {
-
+    private int[] stos;
+    private int n=0,index=-1;
+     public   Stack(int a){
+       this.stos=new int[a];
+    }
     @Override
     public void push(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if((stos.length-1)>index) {
+      index++; 
+      n++;
+      stos[index] = i;
+   } else {
+     StackOverflowError s=new StackOverflowError();
+     
+   }
     }
 
     @Override
     public int pop() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    if(!isEmpty()) {
+        int i = stos[index];
+        index--;
+        n--;
+        return i;
+   } else {
+      EmptyStackException e=new EmptyStackException();
+      return 0;
+   }
+}    
 
     @Override
     public boolean isEmpty() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    if(index == -1)
+        return true;
+    else
+        return false;
+}   
 
 }
+
+
