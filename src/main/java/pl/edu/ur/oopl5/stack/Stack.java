@@ -17,7 +17,7 @@ public class Stack extends AbstractStack {
       n++;
       stos[index] = i;
    } else {
-     StackOverflowError s=new StackOverflowError();
+     throw new StackOverflowError();
      
    }
     }
@@ -30,8 +30,8 @@ public class Stack extends AbstractStack {
         n--;
         return i;
    } else {
-      EmptyStackException e=new EmptyStackException();
-      return 0;
+     throw new EmptyStackException(); 
+      
    }
 }    
 
