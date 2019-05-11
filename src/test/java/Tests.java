@@ -43,7 +43,7 @@ public class Tests {
 
     @Test(timeout = 1000)
     public void testEx5EmployeeAndCompany() {
-        Employee employee = new Employee("Adam", "Nowak", 24, "Junior SocialMedia Specialist");
+        Employee employee = new Employee("Adam", "Nowak", 24,"Junior SocialMedia Specialist");
         Employee employee1 = new Employee("Jan", "Kowalski", 45, "Manager");
         Company company = new Company(7);
 
